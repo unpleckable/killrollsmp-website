@@ -33,14 +33,27 @@
     }
 
     body {
+      position: relative;
+      isolation: isolate;
       min-height: 100vh;
       margin: 0;
       color: white;
       background: var(--ink);
       font-family: var(--font-inter), sans-serif;
-      background-image: url("images/hero-bg.webp");
-      background-size: cover;
-      background-attachment: fixed;
+    }
+
+    body::before {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      background: url("images/hero-bg.webp") center top / cover no-repeat;
+      content: "";
+    }
+
+    @media (min-width: 768px) {
+      body::before {
+        left: 6rem;
+      }
     }
 
     img {
