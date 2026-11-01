@@ -61,6 +61,29 @@
       background: #572480;
     }
 
+    img {
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    /* Smooth scrolling (Lenis) */
+    html.lenis,
+    html.lenis body {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
     .mask-image-fade-to-bottom {
       -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 95%, transparent 100%);
       mask-image: linear-gradient(to bottom, #000 0%, #000 95%, transparent 100%);
@@ -78,6 +101,8 @@
   <link rel="icon" href="images/favicon-256.png" sizes="256x256" type="image/png">
   <link rel="apple-touch-icon" href="images/favicon-180.png" sizes="180x180">
   <script src="/killrollsmp-website/_next/static/chunks/03~yq9q893hmn.js?dpl=dpl_5dKwQdUrCGcXUKkRhyW5ZDGRNPny" nomodule=""></script>
+  <script src="js/lenis.min.js" defer></script>
+  <script src="js/smooth-scroll.js" defer></script>
 </head>
 
 <body>
