@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"
+  class="inter_d67647b6-module__XbAdoq__variable bowlby_one_65e36afa-module__uQH-RW__variable reddit_mono_49a4fc2c-module__74SbEa__variable">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" href="_next/static/media/28b81286731dbdb2-s.p.135p631w1gvyl.woff2" as="font" crossorigin=""
+    type="font/woff2">
+  <link rel="preload" href="_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2" as="font" crossorigin=""
+    type="font/woff2">
+  <link rel="preload" href="_next/static/media/b04a7861492a4193-s.p.08dzumu~6f956.woff2" as="font" crossorigin=""
+    type="font/woff2">
+  <link rel="stylesheet" href="_next/static/chunks/0fqzpo9o89n2l.css" data-precedence="next">
+  <link rel="stylesheet" href="_next/static/chunks/0arteoq9s.yp_.css" data-precedence="next">
+  <title>Teams | KILLROLL SMP</title>
+  <meta name="description" content="Meet the teams competing in KillRoll SMP.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    :root {
+      --purple: #572480;
+      --yellow: #ffda34;
+      --ink: #100d1c;
+      --muted: #d5d7da;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: white;
+      background: var(--ink);
+      font-family: var(--font-inter), sans-serif;
+      background-image: url("images/hero-bg.webp");
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    [data-slot="sidebar-content"] a {
+      color: #fff !important;
+    }
+
+    .page-shell {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 90rem;
+      margin-left: 0;
+      padding: 3rem clamp(1.25rem, 5vw, 5rem) 5rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 4rem;
+      color: var(--muted);
+      font-family: var(--font-reddit-mono), monospace;
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      max-width: 52rem;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--yellow);
+      font-family: var(--font-reddit-mono), monospace;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .hero-logo {
+      display: block;
+      width: min(100%, 42rem);
+      height: auto;
+      margin: 0 auto 1.5rem;
+    }
+
+    h1 {
+      margin: .5rem 0 1rem;
+      font-family: var(--font-bowlby-one), sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .teams {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+      gap: 1.5rem;
+    }
+
+    .team-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 31rem;
+      padding: 1.5rem;
+      border: 1px solid color-mix(in srgb, var(--team-color) 70%, white 30%);
+      border-radius: 1rem;
+      background: linear-gradient(145deg, color-mix(in srgb, var(--team-color) 30%, #19172d 70%), rgba(25, 23, 45, .8));
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, .3);
+    }
+
+    .team-card::before {
+      position: absolute;
+      top: -8rem;
+      right: -5rem;
+      width: 18rem;
+      height: 18rem;
+      border-radius: 50%;
+      background: var(--team-color);
+      opacity: .25;
+      content: "";
+      filter: blur(1rem);
+    }
+
+    .team-number {
+      position: relative;
+      color: var(--team-color);
+      font-family: monospace;
+      font-weight: 700;
+    }
+
+    h2 {
+      position: relative;
+      margin: .5rem 0 1.5rem;
+      font-family: var(--font-bowlby-one), sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .members {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .75rem;
+    }
+
+    .member {
+      overflow: hidden;
+      border-radius: .5rem;
+      background: rgba(0, 0, 0, .28);
+    }
+
+    .member img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .member span {
+      display: block;
+      padding: .6rem .5rem;
+      font-family: var(--font-reddit-mono), monospace;
+      font-size: .8rem;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 640px) {
+      .content {
+        margin-left: 0;
+        padding: 1.5rem 1rem 3rem;
+      }
+
+      .back-link {
+        margin-bottom: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div data-slot="sidebar-wrapper" style="--sidebar-width:6rem;--sidebar-width-icon:3rem"
+    class="group/sidebar-wrapper flex min-h-svh w-full">
+    <div class="flex min-h-screen w-full flex-row">
+      <div class="group peer text-sidebar-foreground hidden md:block" data-state="expanded" data-collapsible=""
+        data-variant="sidebar" data-side="left" data-slot="sidebar">
+        <div data-slot="sidebar-gap"
+          class="sidebar-gradient relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear group-data-[collapsible=offcanvas]:w-0 group-data-[side=right]:rotate-180 group-data-[collapsible=icon]:w-(--sidebar-width-icon)">
+        </div>
+        <div data-slot="sidebar-container"
+          class="fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l">
+          <div data-sidebar="sidebar" data-slot="sidebar-inner"
+            class="sidebar-gradient bg-sidebar flex h-full w-full flex-col">
+            <div data-slot="sidebar-header" data-sidebar="header" class="flex flex-col gap-2 p-2 mx-auto"><a
+                class="hover-scale inline-block" href="index.html"><span class="sr-only">KILLROLL SMP - Home</span><img
+                  alt="logo" width="64" height="64" decoding="async" class="size-14 md:size-16"
+                  src="images/logo.png"></a></div>
+            <div data-slot="sidebar-content" data-sidebar="content"
+              class="min-h-0 flex-1 overflow-auto group-data-[collapsible=icon]:overflow-hidden flex flex-col justify-center-safe gap-4 md:gap-8">
+              <a data-slot="button" data-variant="link" data-size="default"
+                class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap text-white transition-all outline-none underline-offset-4 hover:underline h-9 px-4 py-2 font-mono uppercase"
+                href="index.html">Home</a><a data-slot="button" data-variant="link" data-size="default"
+                class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap text-white transition-all outline-none underline-offset-4 hover:underline h-9 px-4 py-2 font-mono uppercase"
+                href="teams.html">TEAMS</a><a data-slot="button" data-variant="link" data-size="default"
+                class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap text-white transition-all outline-none underline-offset-4 hover:underline h-9 px-4 py-2 font-mono uppercase"
+                href="index.html">Credits</a>
+            </div>
+            <div data-slot="sidebar-footer" data-sidebar="footer" class="hidden"></div>
+          </div>
+        </div>
+      </div>
+
+    <main class="content">
+      <header class="hero">
+        <img class="hero-logo" src="images/logo-lockup.png" alt="KILLROLL SMP">
+        <h1>Choose your side.</h1>
+        <p>Three teams. One server. Every fight changes the balance of power.</p>
+      </header>
+
+      <section class="teams" id="teams" aria-label="KillRoll SMP teams"></section>
+    </main>
+    </div>
+  </div>
+
+  <script>
+    /*
+      Edit this list to add, remove, or update teams. Each member needs a name
+      and an image path from the images folder. Team colors accept any CSS color.
+    */
+    const teams = [
+      {
+        name: "The Vanguard",
+        color: "#ffda34",
+        members: [
+          { name: "McSolsy", image: "images/player-mcsolsy.png" },
+          { name: "Tae", image: "images/player-tae.png" }
+        ]
+      },
+      {
+        name: "Netherbound",
+        color: "#e85d75",
+        members: [
+          { name: "Wyll", image: "images/player-wyll.png" },
+          { name: "Airo", image: "images/player-airo.png" }
+        ]
+      },
+      {
+        name: "Endgame",
+        color: "#9f47d1",
+        members: [
+          { name: "InfamousJJ", image: "images/player-jj.png" },
+          { name: "Kantje", image: "images/player-kantje.png" }
+        ]
+      }
+    ];
+
+    const teamsContainer = document.querySelector("#teams");
+
+    teams.forEach((team, index) => {
+      const card = document.createElement("article");
+      card.className = "team-card";
+      card.style.setProperty("--team-color", team.color);
+      card.innerHTML = `
+        <div class="team-number">TEAM ${String(index + 1).padStart(2, "0")}</div>
+        <h2>${team.name}</h2>
+        <div class="members">
+          ${team.members.map((member) => `
+            <div class="member">
+              <img src="${member.image}" alt="${member.name}" loading="lazy">
+              <span>${member.name}</span>
+            </div>
+          `).join("")}
+        </div>
+      `;
+      teamsContainer.appendChild(card);
+    });
+  </script>
+</body>
+
+</html>

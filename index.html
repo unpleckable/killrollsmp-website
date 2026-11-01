@@ -50,6 +50,14 @@
   <meta name="twitter:site" content="@SmpMoney">
   <meta name="twitter:title" content="KILLROLL SMP">
   <meta name="twitter:description" content="The Home of Greed">
+  <style>
+    [data-slot="sidebar-footer"],
+    [href="/fantasy"],
+    [href="/merch"],
+    nav[aria-label="Legal"] {
+      display: none !important;
+    }
+  </style>
   <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
   <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="images/favicon-256.png" sizes="256x256" type="image/png">
@@ -82,14 +90,10 @@
                 class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 underline-offset-4 hover:underline h-9 px-4 py-2 has-[>svg]:px-3 font-mono text-white uppercase"
                 href="/">Home</a><a data-slot="button" data-variant="link" data-size="default"
                 class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 underline-offset-4 hover:underline h-9 px-4 py-2 has-[>svg]:px-3 font-mono text-white uppercase"
-                href="/leaderboard/current">Events</a><a data-slot="button" data-variant="link" data-size="default"
-                class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 underline-offset-4 hover:underline h-9 px-4 py-2 has-[>svg]:px-3 font-mono text-white uppercase"
-                href="/fantasy">Fantasy</a><a data-slot="button" data-variant="link" data-size="default"
-                class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 underline-offset-4 hover:underline h-9 px-4 py-2 has-[>svg]:px-3 font-mono text-white uppercase"
-                href="/merch">Merch</a><a data-slot="button" data-variant="link" data-size="default"
+                href="teams.html">TEAMS</a><a data-slot="button" data-variant="link" data-size="default"
                 class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 underline-offset-4 hover:underline h-9 px-4 py-2 has-[>svg]:px-3 font-mono text-white uppercase"
                 href="/credits">Credits</a></div>
-            <div data-slot="sidebar-footer" data-sidebar="footer" class="flex flex-col gap-2 p-2 mx-auto pb-4">
+            <div data-slot="sidebar-footer" data-sidebar="footer" class="hidden">
               <div data-social-burst="true" data-state="closed" class="relative size-11"><a
                   href="https://www.twitch.tv/moneysmp" target="_blank" rel="noreferrer" tabindex="-1"
                   aria-hidden="true"
@@ -182,29 +186,10 @@
                             style="color:transparent" src="images/logo-lockup.png"></h1>
                         <h3 class="font-display text-center text-xl uppercase 2xl:text-2xl">- The Home of Greed -</h3>
                       </div>
-                      <div class="grid w-full max-w-sm grid-cols-2 gap-3 sm:max-w-md sm:gap-4"><a data-slot="button"
-                          data-variant="yellow" data-size="2xl"
-                          class="inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-subheading text-black shadow-[inset_0_2px_0_rgb(255_255_255/0.5),0_6px_0_#C78F00,0_0_20px_4px_rgb(255_218_52/0.55)] [-webkit-tap-highlight-color:transparent] hover:-translate-y-0.5 hover:shadow-[inset_0_2px_0_rgb(255_255_255/0.5),0_8px_0_#C78F00,0_0_24px_6px_rgb(255_218_52/0.6)] active:translate-y-1.5 active:shadow-[inset_0_2px_0_rgb(255_255_255/0.25),0_0_0_#C78F00,0_0_12px_2px_rgb(255_218_52/0.45)] active:brightness-95 active:duration-75 gap-2.5 rounded-lg px-8 font-mono font-extrabold uppercase col-span-2 mb-1.5 h-14 text-lg [&amp;_svg:not([class*='size-'])]:size-6"
-                          href="/fantasy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy"
-                            aria-hidden="true">
-                            <path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"></path>
-                            <path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"></path>
-                            <path d="M18 9h1.5a1 1 0 0 0 0-5H18"></path>
-                            <path d="M4 22h16"></path>
-                            <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"></path>
-                            <path d="M6 9H4.5a1 1 0 0 1 0-5H6"></path>
-                          </svg>Play Fantasy</a><a data-slot="button" data-variant="white" data-size="2xl"
-                          class="inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-[0_0_4.9px_1px] shadow-subheading h-12 gap-2.5 rounded-lg text-base [&amp;_svg:not([class*='size-'])]:size-5 font-mono font-extrabold uppercase hover-scale px-3 last:col-span-2 max-[359px]:text-sm sm:px-4"
-                          href="/leaderboard/current"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-circle size-3 animate-pulse fill-[#9f47d1] stroke-none"
-                            aria-hidden="true">
-                            <circle cx="12" cy="12" r="10"></circle>
-                          </svg><span><span class="max-sm:hidden">Live </span>Leaderboard</span></a>
-                        <div class="grid"><a data-slot="button" data-variant="navy" data-size="2xl"
+                      <div class="grid w-full max-w-sm grid-cols-1 gap-3 sm:max-w-md sm:gap-4"><a data-slot="button" data-variant="white" data-size="2xl"
+                          class="inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-[0_0_4.9px_1px] shadow-subheading h-12 gap-2.5 rounded-lg text-base [&amp;_svg:not([class*='size-'])]:size-5 font-mono font-extrabold uppercase hover-scale px-3 max-[359px]:text-sm sm:px-4"
+                          href="index.html#roster">VIEW PLAYERS</a>
+                        <div class="hidden"><a data-slot="button" data-variant="navy" data-size="2xl"
                             class="inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border-2 border-subheading bg-[#19172D] text-white shadow-[0_0_12px_2px] shadow-subheading hover:brightness-110 h-12 gap-2.5 rounded-lg text-base [&amp;_svg:not([class*='size-'])]:size-5 font-mono font-extrabold uppercase hover-scale col-start-1 row-start-1 px-3 max-[359px]:text-sm sm:px-4"
                             href="/merch"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -548,7 +533,7 @@
                   </path>
                 </svg></a> -->
             </div>
-            <nav aria-label="Legal" class="mt-6 flex flex-wrap gap-x-6 gap-y-1 text-sm max-md:justify-center md:mt-8"><a
+            <nav aria-label="Legal" class="hidden"><a
                 class="py-1 underline-offset-4 hover:underline" href="/terms-of-service">Terms of Service</a><a
                 class="py-1 underline-offset-4 hover:underline" href="/privacy-policy">Privacy Policy</a><a
                 class="py-1 underline-offset-4 hover:underline" href="/refund-policy">Refund Policy</a><a
