@@ -11,3 +11,6 @@ html{scrollbar-width:thin;scrollbar-color:#7b3fa8 transparent}
 /* lighter thumb over the purple sidebar */
 .sidebar-gradient,.sidebar-gradient *{scrollbar-color:#b98ae0 transparent}
 .sidebar-gradient::-webkit-scrollbar-thumb,.sidebar-gradient *::-webkit-scrollbar-thumb{background:#b98ae0}
+
+::selection{background-color:#572480;color:#fff}
+::-moz-selection{background-color:#572480;color:#fff}
