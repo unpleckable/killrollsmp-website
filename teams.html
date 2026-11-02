@@ -66,6 +66,37 @@
       color: inherit;
     }
 
+    .skip-link {
+      position: fixed;
+      top: .75rem;
+      left: .75rem;
+      z-index: 1001;
+      transform: translateY(-200%);
+      border-radius: .5rem;
+      background: var(--yellow);
+      color: var(--ink);
+      padding: .75rem 1rem;
+      font-weight: 800;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
     [data-slot="sidebar-content"] a {
       color: #fff !important;
     }
@@ -76,10 +107,43 @@
     }
 
     .content {
-      width: 100%;
+      flex: 1 1 auto;
+      min-width: 0;
+      width: auto;
       max-width: 90rem;
-      margin-left: 0;
+      margin: 0 auto;
       padding: 3rem clamp(1.25rem, 5vw, 5rem) 5rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+      font-family: var(--font-reddit-mono), monospace;
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .mobile-nav a {
+      text-decoration: underline;
+      text-underline-offset: .2em;
     }
 
     .hero {
@@ -120,14 +184,18 @@
 
     .teams {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+      align-items: stretch;
       gap: 1.5rem;
     }
 
     .team-card {
       position: relative;
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
       min-height: 31rem;
+      height: 100%;
       padding: 1.5rem;
       border: 1px solid color-mix(in srgb, var(--team-color) 70%, white 30%);
       border-radius: 1rem;
@@ -157,18 +225,24 @@
 
     h2 {
       position: relative;
+      display: flex;
+      align-items: flex-start;
+      min-height: 4.4rem;
       margin: .5rem 0 1.5rem;
       font-family: var(--font-bowlby-one), sans-serif;
       font-size: 2.2rem;
       line-height: 1;
       text-transform: uppercase;
+      overflow-wrap: anywhere;
     }
 
     .members {
       position: relative;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      align-items: stretch;
       gap: .75rem;
+      margin-top: auto;
     }
 
     .member {
@@ -182,25 +256,62 @@
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      object-position: top;
+      object-position: center 35%;
     }
 
     .member span {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.8rem;
       padding: .6rem .5rem;
       font-family: var(--font-reddit-mono), monospace;
       font-size: .8rem;
       font-weight: 700;
       text-align: center;
       text-transform: uppercase;
+      overflow-wrap: anywhere;
     }
 
     @media (max-width: 640px) {
       .content {
-        margin-left: 0;
         padding: 1.5rem 1rem 3rem;
       }
 
+      .mobile-nav {
+        display: flex;
+      }
+
+      .hero {
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-logo {
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 11vw, 3rem);
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .teams {
+        gap: 1rem;
+      }
+
+      .team-card {
+        min-height: 0;
+        padding: 1rem;
+      }
+
+      h2 {
+        min-height: 3.8rem;
+        margin-bottom: 1rem;
+        font-size: clamp(1.65rem, 9vw, 2.2rem);
+      }
     }
 
     /* Smooth scrolling (Lenis) */
@@ -224,6 +335,7 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page-transition-overlay is-visible" aria-hidden="true"></div>
   <div data-slot="sidebar-wrapper" style="--sidebar-width:6rem;--sidebar-width-icon:3rem"
     class="group/sidebar-wrapper flex min-h-svh w-full">
@@ -249,21 +361,28 @@
                 class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap text-white transition-all outline-none underline-offset-4 hover:underline h-9 px-4 py-2 font-mono uppercase"
                 href="teams.html">TEAMS</a><a data-slot="button" data-variant="link" data-size="default"
                 class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap text-white transition-all outline-none underline-offset-4 hover:underline h-9 px-4 py-2 font-mono uppercase"
-                href="index.html">Credits</a>
+                href="index.html#community">Credits</a>
             </div>
             <div data-slot="sidebar-footer" data-sidebar="footer" class="hidden"></div>
           </div>
         </div>
       </div>
 
-    <main class="content">
+    <main id="main-content" class="content">
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="teams.html" aria-current="page">Teams</a>
+        <a href="index.html#community">Credits</a>
+      </nav>
       <header class="hero">
         <img class="hero-logo" src="images/logo-lockup.png" alt="KILLROLL SMP">
         <h1 class="font-display">Choose your side</h1>
         <p>Three teams. One person from every tier. Fighting for the top spot.</p>
       </header>
 
-      <section class="teams" id="teams" aria-label="KillRoll SMP teams"></section>
+      <section class="teams" id="teams" aria-labelledby="teams-heading">
+        <h2 id="teams-heading" class="sr-only">KillRoll SMP teams</h2>
+      </section>
     </main>
     </div>
   </div>
@@ -280,8 +399,8 @@
         members: [
           { name: "Unpleckable", image: "images/player-unpleckable.png" },
           { name: "its just logic", image: "images/player-jj.png" },
-          { name: "SebB", image: "images/player-killer.png" },
-          { name: "OllieF", image: "images/player-sebb.png" }
+          { name: "SebB", image: "images/player-mcsolsy.png" },
+          { name: "OllieF", image: "images/player-bry.png" }
         ]
       },
       {
@@ -290,8 +409,8 @@
         members: [
           { name: "SpiritPenguin", image: "images/player-kantje.png" },
           { name: "ArchieB", image: "images/player-airo.png" },
-          { name: "Heinous_paradigm", image: "images/player-archieb.png" },
-          { name: "EdmundH", image: "images/player-spirit.png" }
+          { name: "Heinous_paradigm", image: "images/player-jj.png" },
+          { name: "EdmundH", image: "images/player-luigi.png" }
         ]
       },
       {
@@ -300,8 +419,8 @@
         members: [
           { name: "OwenC", image: "images/player-tae.png" },
           { name: "HarrisonW", image: "images/player-wyll.png" },
-          { name: "Pi_Specs", image: "images/player-owenc.png" },
-          { name: "BeauH", image: "images/player-harrison.png" }
+          { name: "Pi_Specs", image: "images/player-mcsolsy.png" },
+          { name: "BeauH", image: "images/player-bry.png" }
         ]
       }
     ];
@@ -314,17 +433,35 @@
       card.style.setProperty("--team-color", team.color);
       card.innerHTML = `
         <div class="team-number">TEAM ${String(index + 1).padStart(2, "0")}</div>
-        <h2>${team.name}</h2>
+        <h2 id="team-${index + 1}-heading">${team.name}</h2>
         <div class="members">
           ${team.members.map((member) => `
             <div class="member">
-              <img src="${member.image}" alt="${member.name}" loading="lazy">
+              <img src="${member.image}" alt="${member.name}" width="400" height="400" loading="lazy"
+                onerror="this.onerror=null;this.src='images/logo.png';">
               <span>${member.name}</span>
             </div>
           `).join("")}
         </div>
       `;
       teamsContainer.appendChild(card);
+    });
+
+    const equalizeTeamCards = () => {
+      const cards = [...document.querySelectorAll(".team-card")];
+      cards.forEach((card) => {
+        card.style.height = "auto";
+      });
+      const height = Math.max(...cards.map((card) => card.getBoundingClientRect().height));
+      cards.forEach((card) => {
+        card.style.height = `${height}px`;
+      });
+    };
+
+    equalizeTeamCards();
+    window.addEventListener("resize", equalizeTeamCards);
+    document.querySelectorAll(".member img").forEach((image) => {
+      image.addEventListener("load", equalizeTeamCards, { once: true });
     });
   </script>
   <script src="js/prevent-image-drag.js" defer></script>
