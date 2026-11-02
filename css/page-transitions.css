@@ -1,0 +1,26 @@
+/*
+ * Fade between pages. The overlay is visible in the initial HTML so a
+ * navigation never flashes the next page before it has loaded, then it
+ * fades away once the new page is ready.
+ */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #100d1c;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 380ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.page-transition-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-overlay {
+    transition: none;
+  }
+}

@@ -84,11 +84,6 @@
       overscroll-behavior: contain;
     }
 
-    .mask-image-fade-to-bottom {
-      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 95%, transparent 100%);
-      mask-image: linear-gradient(to bottom, #000 0%, #000 95%, transparent 100%);
-    }
-
     [data-slot="sidebar-footer"],
     [href="/fantasy"],
     [href="/merch"],
@@ -97,6 +92,7 @@
     }
   </style>
   <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="stylesheet" href="css/page-transitions.css">
   <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="images/favicon-256.png" sizes="256x256" type="image/png">
   <link rel="apple-touch-icon" href="images/favicon-180.png" sizes="180x180">
@@ -104,9 +100,11 @@
   <script src="js/prevent-image-drag.js" defer></script>
   <script src="js/lenis.min.js" defer></script>
   <script src="js/smooth-scroll.js" defer></script>
+  <script src="js/page-transitions.js" defer></script>
 </head>
 
 <body>
+  <div class="page-transition-overlay is-visible" aria-hidden="true"></div>
   <div hidden=""><!--$--><!--/$--></div><!--$!--><template
     data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"></template><!--/$-->
   <div data-slot="sidebar-wrapper" style="--sidebar-width:6rem;--sidebar-width-icon:3rem"
@@ -204,8 +202,8 @@
           <div class="fixed top-3.5 right-4 z-1000 md:top-4 md:right-6"></div>
           <div class="pt-16 md:pt-0">
             <div class="flex w-full flex-col gap-y-21">
-              <div class="flex w-full flex-col">
-                <div class="mask-image-fade-to-bottom relative w-full flex-1 space-y-21"><img alt="moneysmp background"
+              <div class="relative flex w-full flex-col">
+                <div class="w-full flex-1 space-y-21"><img alt="moneysmp background"
                     fetchpriority="high" decoding="async" data-nimg="fill"
                     class="-z-1 object-cover object-top opacity-100 max-md:object-[70%_top]"
                     style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url("
