@@ -1,0 +1,21 @@
+{
+  "name": "KILLROLL SMP",
+  "short_name": "KillRoll",
+  "description": "Minecraft's most competitive PvP event. Where luck triumphs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#572480",
+  "theme_color": "#572480",
+  "icons": [
+    {
+      "src": "images/favicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
